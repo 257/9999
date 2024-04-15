@@ -32,7 +32,7 @@ QA_PREBUILT="
 
 DESCRIPTION="Android development environment based on IntelliJ IDEA"
 HOMEPAGE="http://developer.android.com/sdk/installing/studio.html"
-NIGHT="2024-04-11"
+NIGHT="2024-04-14"
 SRC_URI="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/${PV}/${PN}-nightly-${NIGHT}-linux.tar.gz"
 
 LICENSE="Apache-2.0"
