@@ -62,7 +62,7 @@ WLROOTS_RDEPEND="
 "
 WLROOTS_BDEPEND="
 	>=dev-libs/wayland-protocols-1.32
-	dev-util/hyprwayland-scanner
+	>=dev-util/hyprwayland-scanner-0.3.8
 	virtual/pkgconfig
 "
 RDEPEND="
