@@ -15,3 +15,22 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 KEYWORDS="amd64"
 SLOT="0"
 
+RDEPEND="
+	dev-python/attrs
+	dev-python/cattrs
+	dev-python/colorama
+	dev-python/exceptiongroup
+	dev-python/importlib-resources
+	dev-python/iniconfig
+	dev-python/jsonschema
+	dev-python/jsonschema-specifications
+	dev-python/packaging
+	dev-python/pluggy
+	dev-python/pyhamcrest
+	dev-python/referencing
+	dev-python/rpds-py
+	dev-python/tomli
+	dev-python/typing-extensions
+	dev-python/zipp
+"
+
