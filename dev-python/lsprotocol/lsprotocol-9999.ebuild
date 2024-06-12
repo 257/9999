@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{11..13} )
 
-inherit git-r3
+inherit distutils-r1 git-r3
 
 DESCRIPTION="Language Server Protocol types code generator & packages"
 HOMEPAGE="https://github.com/microsoft/lsprotocol"
@@ -34,3 +34,6 @@ RDEPEND="
 	dev-python/zipp
 "
 
+src_install() {
+	distutils-r1_src_install
+}
