@@ -20,6 +20,7 @@ RDEPEND="
 	dev-python/cattrs
 	dev-python/exceptiongroup
 	dev-python/importlib-metadata
+	dev-python/lsprotocol
 	dev-python/packaging
 	dev-util/ruff
 	dev-python/typing-extensions
