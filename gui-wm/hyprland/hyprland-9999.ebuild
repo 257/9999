@@ -11,6 +11,7 @@ HOMEPAGE="https://github.com/hyprwm/Hyprland"
 if [[ "${PV}" = *9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/hyprwm/${PN^}.git"
+	HYPRPM_RDEPEND="=dev-libs/hyprland-protocols-9999"
 else
 	SRC_URI="https://github.com/hyprwm/${PN^}/releases/download/v${PV}/source-v${PV}.tar.gz -> ${P}.gh.tar.gz"
 	S="${WORKDIR}/${PN}-source"
@@ -25,6 +26,7 @@ IUSE="X legacy-renderer systemd"
 # hyprpm (hyprland plugin manager) requires the dependencies at runtime
 # so that it can clone, compile and install plugins.
 HYPRPM_RDEPEND="
+	${HYPRPM_RDEPEND}
 	app-alternatives/ninja
 	dev-build/cmake
 	dev-libs/libliftoff
@@ -126,5 +128,6 @@ src_configure() {
 }
 
 src_install() {
+	cmake_src_installheaders
 	cmake_src_install
 }
