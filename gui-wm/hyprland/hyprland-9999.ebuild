@@ -128,6 +128,5 @@ src_configure() {
 }
 
 src_install() {
-	cmake_src_installheaders
 	cmake_src_install
 }
