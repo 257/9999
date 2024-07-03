@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=flit
 PYTHON_COMPAT=( python3_{11..13} )
 
 inherit distutils-r1 git-r3
@@ -14,24 +14,13 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 
 KEYWORDS="amd64"
 SLOT="0"
+S="${S}/packages/python"
 
 RDEPEND="
 	dev-python/attrs
 	dev-python/cattrs
-	dev-python/colorama
 	dev-python/exceptiongroup
-	dev-python/importlib-resources
-	dev-python/iniconfig
-	dev-python/jsonschema
-	dev-python/jsonschema-specifications
-	dev-python/packaging
-	dev-python/pluggy
-	dev-python/pyhamcrest
-	dev-python/referencing
-	dev-python/rpds-py
-	dev-python/tomli
 	dev-python/typing-extensions
-	dev-python/zipp
 "
 
 src_prepare() {
