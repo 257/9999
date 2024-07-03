@@ -22,6 +22,7 @@ RDEPEND="
 	dev-python/importlib-metadata
 	dev-python/lsprotocol
 	dev-python/packaging
+	dev-python/pygls
 	dev-util/ruff
 	dev-python/typing-extensions
 	dev-python/zipp
