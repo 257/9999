@@ -8,17 +8,9 @@ inherit cmake
 DESCRIPTION="Hyprland's GPU-accelerated screen locking utility"
 HOMEPAGE="https://github.com/hyprwm/hyprlock"
 
-if [[ "${PV}" = *9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/hyprwm/${PN^}.git"
-else
-	SRC_URI="https://github.com/hyprwm/${PN^}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
-	PATCHES=(
-		"${FILESDIR}/0001-fix-CFLAGS-CXXFLAGS-hyprlock.patch"
-		"${FILESDIR}/0002-cmake-install-pam-file-fix.patch"
-	)
-fi
+inherit git-r3
+EGIT_REPO_URI="https://github.com/hyprwm/${PN^}.git"
+KEYWORDS="~amd64"
 
 LICENSE="BSD"
 SLOT="0"
