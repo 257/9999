@@ -43,7 +43,6 @@ dev-python/requests
 dev-python/setuptools
 dev-python/snowballstemmer
 dev-python/sphinx
-dev-python/sphinx-design
 dev-python/sphinx-rtd-theme
 dev-python/sphinxcontrib-applehelp
 dev-python/sphinxcontrib-devhelp
