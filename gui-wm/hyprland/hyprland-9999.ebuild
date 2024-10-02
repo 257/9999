@@ -106,8 +106,6 @@ src_configure() {
 		-DLEGACY_RENDERER=$(usex legacy-renderer '1' '0')
 		-DNO_SYSTEMD=$(usex systemd '0' '1')
 		-DNO_XWAYLAND=$(usex X '0' '1')
-		-Dwlroots:backends=drm,libinput$(usev X ',x11')
-		-Dwlroots:xcb-errors=disabled
 	)
 
 	cmake_src_configure
