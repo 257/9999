@@ -8,17 +8,9 @@ inherit cmake toolchain-funcs
 DESCRIPTION="xdg-desktop-portal backend for hyprland"
 HOMEPAGE="https://github.com/hyprwm/xdg-desktop-portal-hyprland"
 
-if [[ ${PV} == 9999 ]]; then
-	EGIT_REPO_URI="https://github.com/hyprwm/xdg-desktop-portal-hyprland.git"
-	inherit git-r3
-else
-	PROTO_COMMIT="4d29e48433270a2af06b8bc711ca1fe5109746cd"
-	SRC_URI="https://github.com/hyprwm/xdg-desktop-portal-hyprland/archive/refs/tags/v${PV}.tar.gz \
-		-> xdg-desktop-hyprland-${PV}.tar.gz
-	https://github.com/hyprwm/hyprland-protocols/archive/${PROTO_COMMIT}.tar.gz \
-		-> proto-subproject-${PV}.tar.gz"
-	KEYWORDS="~amd64"
-fi
+inherit git-r3
+KEYWORDS="~amd64"
+EGIT_REPO_URI="https://github.com/hyprwm/xdg-desktop-portal-hyprland.git"
 
 LICENSE="MIT"
 SLOT="0"
