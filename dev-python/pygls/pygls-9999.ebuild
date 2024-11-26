@@ -18,7 +18,6 @@ SLOT="0"
 RDEPEND="
 dev-python/alabaster
 dev-python/attrs
-dev-python/Babel
 dev-python/cattrs
 dev-python/certifi
 dev-python/charset-normalizer
