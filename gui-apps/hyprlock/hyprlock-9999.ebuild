@@ -22,12 +22,13 @@ RDEPEND="
 	media-libs/mesa[opengl]
 	sys-libs/pam
 	dev-libs/glib:2
-	>=dev-libs/hyprlang-0.4.0
+	dev-libs/hyprlang
 	media-libs/libglvnd
 	x11-libs/cairo
 	x11-libs/libxkbcommon
 	x11-libs/libdrm
 	x11-libs/pango
+	gui-libs/hyprgraphics
 "
 DEPEND="
 	${RDEPEND}
@@ -38,3 +39,7 @@ BDEPEND="
 	dev-util/wayland-scanner
 	virtual/pkgconfig
 "
+
+src_configure() {
+	CMAKE_BUILD_TYPE="Release" cmake_src_configure
+}
