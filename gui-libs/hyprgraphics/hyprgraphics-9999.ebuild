@@ -7,6 +7,7 @@ inherit cmake
 
 DESCRIPTION="Aquamarine is a very light linux rendering backend library"
 HOMEPAGE="https://github.com/hyprwm/aquamarine"
+KEYWORDS="~amd64"
 
 inherit git-r3
 EGIT_REPO_URI="https://github.com/hyprwm/${PN^}.git"
