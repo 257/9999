@@ -449,7 +449,7 @@ CRATES="
 	zip@0.6.6
 "
 
-inherit cargo
+inherit cargo git-r3
 
 DESCRIPTION=""
 HOMEPAGE=""
@@ -462,3 +462,10 @@ LICENSE=""
 LICENSE+=" Apache-2.0 BSD ISC MIT MPL-2.0 Unicode-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
+EGIT_REPO_URI="https://github.com/supabase-community/postgres_lsp.git"
+
+
+src_unpack() {
+    git-r3_src_unpack
+    cargo_live_src_unpack
+}
