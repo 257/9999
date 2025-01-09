@@ -36,7 +36,7 @@ DEPEND="
 "
 
 BDEPEND="
-	dev-util/wayland-scanner
+	dev-util/hyprwayland-scanner
 	virtual/pkgconfig
 "
 
