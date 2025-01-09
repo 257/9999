@@ -36,7 +36,7 @@ DEPEND="
 "
 
 BDEPEND="
-	dev-util/hyprwayland-scanner
+	=dev-util/hyprwayland-scanner-9999
 	virtual/pkgconfig
 "
 
