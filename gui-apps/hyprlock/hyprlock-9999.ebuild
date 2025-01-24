@@ -3,17 +3,17 @@
 
 EAPI=8
 
-inherit cmake
+inherit cmake flag-o-matic
 
 DESCRIPTION="Hyprland's GPU-accelerated screen locking utility"
 HOMEPAGE="https://github.com/hyprwm/hyprlock"
 
 inherit git-r3
 EGIT_REPO_URI="https://github.com/hyprwm/${PN^}.git"
-KEYWORDS="~amd64"
-
 LICENSE="BSD"
 SLOT="0"
+
+KEYWORDS="~amd64"
 
 RDEPEND="
 	gui-libs/hyprutils
@@ -36,10 +36,13 @@ DEPEND="
 "
 
 BDEPEND="
-	=dev-util/hyprwayland-scanner-9999
+	~dev-util/hyprwayland-scanner-9999
 	virtual/pkgconfig
 "
 
 src_configure() {
+	if [[ "$(tc-getCC)" -eq "clang" ]]; then
+		append-flags "-fexperimental-library"
+	fi
 	CMAKE_BUILD_TYPE="Release" cmake_src_configure
 }
