@@ -19,6 +19,7 @@ SLOT="0"
 RESTRICT="test"
 RDEPEND="
 	media-libs/libjxl
+	media-libs/libspng
 "
 DEPEND="
 	${RDEPEND}
