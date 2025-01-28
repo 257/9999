@@ -5,6 +5,8 @@ EAPI=8
 
 inherit wrapper desktop
 
+DESCRIPTION="Android development environment based on IntelliJ IDEA"
+HOMEPAGE="http://developer.android.com/sdk/installing/studio.html"
 RESTRICT="strip"
 
 QA_PREBUILT="
@@ -30,17 +32,16 @@ QA_PREBUILT="
 	opt/${PN}/plugins/webp/lib/libwebp/linux/*
 "
 
-DESCRIPTION="Android development environment based on IntelliJ IDEA"
-HOMEPAGE="http://developer.android.com/sdk/installing/studio.html"
 NIGHT=$(ver_cut 6-)
 NIGHT="${NIGHT:0:4}-${NIGHT:4:2}-${NIGHT:6:2}"
-PV=$(ver_cut 1-4)
-SRC_URI="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/${PV}/${PN}-nightly-${NIGHT}-linux.tar.gz"
+pv=$(ver_cut 1-4)
+SRC_URI="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/${pv}/${PN}-nightly-${NIGHT}-linux.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-IUSE="selinux"
+S=${WORKDIR}/${PN}
 KEYWORDS="amd64"
+IUSE="selinux"
 
 RDEPEND="${DEPEND}
 	selinux? ( sec-policy/selinux-android )
@@ -56,8 +57,6 @@ RDEPEND="${DEPEND}
 	x11-libs/libdrm
 	virtual/libcrypt:=
 "
-
-S=${WORKDIR}/${PN}
 
 src_compile() {
 	:;
