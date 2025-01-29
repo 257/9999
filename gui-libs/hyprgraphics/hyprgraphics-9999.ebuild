@@ -7,13 +7,12 @@ inherit cmake
 
 DESCRIPTION="Aquamarine is a very light linux rendering backend library"
 HOMEPAGE="https://github.com/hyprwm/aquamarine"
+LICENSE="BSD"
+SLOT="0"
 KEYWORDS="~amd64"
 
 inherit git-r3
 EGIT_REPO_URI="https://github.com/hyprwm/${PN^}.git"
-
-LICENSE="BSD"
-SLOT="0"
 
 # Upstream states that the simpleWindow test is broken, see bug 936653
 RESTRICT="test"
@@ -23,9 +22,6 @@ RDEPEND="
 "
 DEPEND="
 	${RDEPEND}
-"
-
-BDEPEND="
 "
 
 src_prepare() {
