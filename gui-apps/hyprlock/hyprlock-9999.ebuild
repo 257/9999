@@ -41,7 +41,7 @@ BDEPEND="
 "
 
 src_configure() {
-	if [[ "$(tc-getCC)" -eq "clang" ]]; then
+	if [[ "$(tc-getCC)" = "clang" ]]; then
 		append-flags "-fexperimental-library"
 	fi
 	CMAKE_BUILD_TYPE="Release" cmake_src_configure
