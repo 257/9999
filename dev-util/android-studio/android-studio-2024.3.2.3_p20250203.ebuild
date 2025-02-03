@@ -7,7 +7,6 @@ inherit wrapper desktop
 
 DESCRIPTION="Android development environment based on IntelliJ IDEA"
 HOMEPAGE="http://developer.android.com/sdk/installing/studio.html"
-RESTRICT="strip"
 
 QA_PREBUILT="
 	opt/${PN}/bin/*
@@ -36,12 +35,12 @@ NIGHT=$(ver_cut 6-)
 NIGHT="${NIGHT:0:4}-${NIGHT:4:2}-${NIGHT:6:2}"
 pv=$(ver_cut 1-4)
 SRC_URI="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/${pv}/${PN}-nightly-${NIGHT}-linux.tar.gz"
-
+S=${WORKDIR}/${PN}
 LICENSE="Apache-2.0"
 SLOT="0"
-S=${WORKDIR}/${PN}
 KEYWORDS="amd64"
 IUSE="selinux"
+RESTRICT="strip"
 
 RDEPEND="${DEPEND}
 	selinux? ( sec-policy/selinux-android )
