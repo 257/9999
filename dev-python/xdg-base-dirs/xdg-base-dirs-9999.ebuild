@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=poetry
+DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{12..13} )
 
 inherit distutils-r1 git-r3
@@ -12,11 +12,8 @@ DESCRIPTION="xdg base dirs"
 HOMEPAGE="https://github.com/srstevenson/${PN}"
 EGIT_REPO_URI="${HOMEPAGE}.git"
 
-KEYWORDS="amd64"
 SLOT="0"
-
-RDEPEND="
-"
+KEYWORDS="~amd64"
 
 src_prepare() {
 	distutils-r1_src_prepare
