@@ -31,7 +31,7 @@ QA_PREBUILT="
 	opt/${PN}/plugins/webp/lib/libwebp/linux/*
 "
 
-NIGHT=$(ver_cut 6-)
+NIGHT=$(ver_cut 6)
 NIGHT="${NIGHT:0:4}-${NIGHT:4:2}-${NIGHT:6:2}"
 pv=$(ver_cut 1-4)
 SRC_URI="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/${pv}/${PN}-nightly-${NIGHT}-linux.tar.gz"
