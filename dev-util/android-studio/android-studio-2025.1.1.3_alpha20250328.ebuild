@@ -27,7 +27,7 @@ QA_PREBUILT="
 	opt/${PN}/plugins/android/resources/transport/*/*
 	opt/${PN}/plugins/android/resources/transport/native/agent/*/*
 	opt/${PN}/plugins/android/resources/transport/*/*
-	opt/${PN}/plugins/c-plugin/bin/clang/linux/*
+	opt/${PN}/plugins/c-clangd/bin/clang/linux/*
 	opt/${PN}/plugins/webp/lib/libwebp/linux/*
 "
 
@@ -69,7 +69,7 @@ src_install() {
 	fperms -R 755 "${dir}"/bin/lldb
 	fperms -R 755 "${dir}"/jbr/bin
 	fperms -R 755 "${dir}"/plugins/android-ndk/resources/lldb/bin
-	fperms -R 755 "${dir}"/plugins/c-clangd-plugin/bin/clang/linux
+	fperms -R 755 "${dir}"/plugins/c-clangd/bin/clang/linux
 	fperms -R 755 "${dir}"/plugins/Kotlin/kotlinc/bin
 	fperms 755 ${dir}/jbr/lib/{jexec,jspawnhelper}
 	newicon "bin/studio.png" "${PN}.png"
