@@ -105,6 +105,8 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="~amd64"
 
+BDEPS="virtual/rust"
+
 src_unpack() {
 	git-r3_src_unpack
 	cargo_live_src_unpack
