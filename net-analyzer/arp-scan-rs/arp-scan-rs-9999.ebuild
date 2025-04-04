@@ -105,7 +105,7 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="~amd64"
 
-BDEPS="virtual/rust"
+RDEPEND="!net-analyzer/arp-scan"
 
 src_unpack() {
 	git-r3_src_unpack
