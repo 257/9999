@@ -363,3 +363,8 @@ LICENSE="MIT"
 LICENSE+=" Apache-2.0 BSD Boost-1.0 ISC MIT Unicode-3.0 ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
+
+src_unpack() {
+	git-r3_src_unpack
+	cargo_live_src_unpack
+}
