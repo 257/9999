@@ -173,6 +173,7 @@ CRATES="
 	openssl-probe@0.1.6
 	openssl-sys@0.9.105
 	openssl@0.10.70
+	packet-builder@0.7.0
 	parking_lot@0.12.3
 	parking_lot_core@0.9.10
 	paste@1.0.15
@@ -344,10 +345,6 @@ CRATES="
 	zstd-sys@2.0.13+zstd.1.5.6
 	zstd@0.13.2
 "
-
-declare -A GIT_CRATES=(
-	[packet-builder]='https://github.com/cyqsimon/packet_builder;9911566055bba746a4d9b8189e3657ac818beb4d;packet_builder-%commit%'
-)
 
 inherit cargo git-r3
 
