@@ -235,6 +235,7 @@ HOMEPAGE="https://github.com/eza-community/eza"
 SRC_URI="
 	${CARGO_CRATE_URIS}
 "
+EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="EUPL-1.2"
 # Dependent crate licenses
