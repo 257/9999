@@ -3,6 +3,8 @@
 
 EAPI=8
 
+IUSE="qemu"
+
 DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{12..13} )
 
@@ -16,7 +18,7 @@ LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 RDEPEND="
-	app-emulation/qemu
+	qemu? ( app-emulation/qemu )
 	sys-apps/bubblewrap
 	sys-apps/systemd
 	|| ( sys-firmware/edk2-bin sys-firmware/edk2 )"
