@@ -228,7 +228,7 @@ CRATES="
 	zoneinfo_compiled@0.5.1
 "
 
-inherit cargo
+inherit cargo git-r3
 
 DESCRIPTION="A modern replacement for ls"
 HOMEPAGE="https://github.com/eza-community/eza"
