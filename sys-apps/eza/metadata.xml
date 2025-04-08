@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person" proxied="yes">
+		<email>darwinskernel@gmail.com</email>
+		<name>Paymon MARANDI</name>
+	</maintainer>
+	<upstream>
+    <changelog>eza-community/eza</changelog>
+    <bugs-to>eza-community/eza</bugs-to>
+    <remote-id type="github">eza-community/eza</remote-id>
+	</upstream>
+</pkgmetadata>
