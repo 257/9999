@@ -19,7 +19,6 @@ IUSE="qemu"
 
 RDEPEND="
 	qemu? ( app-emulation/qemu )
-	sys-apps/bubblewrap
 	sys-apps/systemd
 	|| ( sys-firmware/edk2-bin sys-firmware/edk2 )"
 BDEPEND="virtual/pandoc"
