@@ -27,7 +27,7 @@ HYPRPM_RDEPEND="
 	dev-vcs/git
 	virtual/pkgconfig
 	gui-libs/aquamarine
-	dev-libs/glaze
+	dev-cpp/glaze
 "
 # bundled wlroots has the following dependency string according to included headers.
 # wlroots[drm,gles2-renderer,libinput,x11-backend?,X?]
