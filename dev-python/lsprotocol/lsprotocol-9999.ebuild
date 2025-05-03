@@ -12,7 +12,7 @@ DESCRIPTION="Language Server Protocol types code generator & packages"
 HOMEPAGE="https://github.com/microsoft/lsprotocol"
 EGIT_REPO_URI="${HOMEPAGE}.git"
 
-KEYWORDS="amd64"
+KEYWORDS=""
 SLOT="0"
 S="${S}/packages/python"
 

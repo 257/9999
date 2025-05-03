@@ -14,7 +14,7 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS=""
 RDEPEND="
 	dev-python/attrs
 	dev-python/cattrs

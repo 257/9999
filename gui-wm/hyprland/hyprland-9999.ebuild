@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/hyprwm/Hyprland"
 inherit git-r3
 EGIT_REPO_URI="https://github.com/hyprwm/${PN}.git"
 HYPRPM_RDEPEND="=dev-libs/hyprland-protocols-9999"
-KEYWORDS="~amd64"
+KEYWORDS=""
 
 LICENSE="BSD"
 SLOT="0"

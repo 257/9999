@@ -14,7 +14,7 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64" # If set, can not commit because of dev-python/py-nanoid and dev-python/mkdocs-blog-plugin
+KEYWORDS="" # If set, can not commit because of dev-python/py-nanoid and dev-python/mkdocs-blog-plugin
 IUSE="doc"
 
 DEPEND="dev-python/urwid"
