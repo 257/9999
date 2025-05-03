@@ -359,7 +359,7 @@ LICENSE="MIT"
 # Dependent crate licenses
 LICENSE+=" Apache-2.0 BSD Boost-1.0 ISC MIT Unicode-3.0 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 
 src_unpack() {
 	git-r3_src_unpack

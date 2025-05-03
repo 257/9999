@@ -9,7 +9,7 @@ DESCRIPTION="xdg-desktop-portal backend for hyprland"
 HOMEPAGE="https://github.com/hyprwm/xdg-desktop-portal-hyprland"
 
 inherit git-r3
-KEYWORDS="~amd64"
+KEYWORDS=""
 EGIT_REPO_URI="https://github.com/hyprwm/xdg-desktop-portal-hyprland.git"
 
 LICENSE="MIT"
