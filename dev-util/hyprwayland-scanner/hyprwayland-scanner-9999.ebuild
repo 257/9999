@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/hyprwm/hyprwayland-scanner/"
 
 EGIT_REPO_URI="https://github.com/hyprwm/hyprwayland-scanner.git"
 inherit git-r3
-KEYWORDS="~amd64"
+KEYWORDS=""
 
 LICENSE="BSD"
 SLOT="0"

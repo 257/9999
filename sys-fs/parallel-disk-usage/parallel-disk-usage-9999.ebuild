@@ -119,7 +119,7 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 # use cargo-license for a more accurate license picture
 LICENSE="Apache-2.0 Apache-2.0-with-LLVM-exceptions Boost-1.0 MIT Unicode-DFS-2016"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
