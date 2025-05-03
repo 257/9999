@@ -21,8 +21,12 @@ DEPEND="
 	media-video/pipewire
 	dev-cpp/sdbus-c++
 	dev-libs/hyprlang
+	gui-libs/hyprutils
+	dev-libs/hyprland-protocols
+	dev-util/hyprwayland-scanner
 	dev-libs/inih
 	dev-libs/wayland
+	dev-libs/wayland-protocols
 	dev-qt/qtbase:6[gui,widgets]
 	dev-qt/qtwayland:6
 	media-libs/mesa
