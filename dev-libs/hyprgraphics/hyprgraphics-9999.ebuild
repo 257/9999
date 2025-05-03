@@ -1,15 +1,15 @@
-# Copyright 2023-2024 Gentoo Authors
+# Copyright 2023-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit cmake
 
-DESCRIPTION="Aquamarine is a very light linux rendering backend library"
-HOMEPAGE="https://github.com/hyprwm/aquamarine"
-LICENSE="BSD"
+DESCRIPTION="Hyprland graphics / resource utilities"
+HOMEPAGE="https://github.com/hyprwm/hyprgraphics"
+LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 
 inherit git-r3
 EGIT_REPO_URI="https://github.com/hyprwm/${PN^}.git"
@@ -20,9 +20,7 @@ RDEPEND="
 	media-libs/libjxl
 	media-libs/libspng
 "
-DEPEND="
-	${RDEPEND}
-"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	# sed -i "/add_compile_options(-O3)/d" "${S}/CMakeLists.txt" || die
