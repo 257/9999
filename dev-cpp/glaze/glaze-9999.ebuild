@@ -5,7 +5,7 @@ EAPI=8
 
 inherit git-r3 cmake
 
-DESCRIPTION="C++ JSON reader and writer"
+DESCRIPTION="Extremely fast, in memory, JSON and interface library for modern C++"
 HOMEPAGE="https://github.com/stephenberry/${PN}"
 EGIT_REPO_URI="${HOMEPAGE}.git"
 SLOT=0
