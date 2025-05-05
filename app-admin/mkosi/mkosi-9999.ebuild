@@ -34,7 +34,7 @@ src_compile() {
 src_install() {
 	distutils-r1_src_install
 
-	doman mkosi/resources/mkosi.1
+	doman mkosi/resources/man/mkosi.1
 }
 
 pkg_postinst() {
