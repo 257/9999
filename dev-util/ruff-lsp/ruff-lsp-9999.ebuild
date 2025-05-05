@@ -6,7 +6,7 @@ EAPI=8
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=(python3_13)
 
-inherit distutils-r1 optfeature git-r3
+inherit distutils-r1 git-r3
 
 DESCRIPTION="A Language Server Protocol implementation for Ruff"
 HOMEPAGE="https://github.com/astral-sh/ruff-lsp"
