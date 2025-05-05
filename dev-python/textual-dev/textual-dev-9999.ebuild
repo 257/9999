@@ -12,8 +12,8 @@ DESCRIPTION="Python port of the fzy fuzzy string matching algorithm."
 HOMEPAGE="https://github.com/textualize/${PN}"
 EGIT_REPO_URI="${HOMEPAGE}.git"
 
-KEYWORDS=""
 SLOT="0"
+KEYWORDS=""
 
 RDEPEND="
 	>=dev-python/textual-0.86.2[${PYTHON_USEDEP}]
