@@ -28,7 +28,7 @@ RDEPEND="
 	x11-libs/libxkbcommon
 	x11-libs/libdrm
 	x11-libs/pango
-	gui-libs/hyprgraphics
+	dev-libs/hyprgraphics
 "
 DEPEND="
 	${RDEPEND}
