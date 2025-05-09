@@ -94,6 +94,7 @@ BDEPEND="
 	${WLROOTS_BDEPEND}
 	app-misc/jq
 	dev-build/cmake
+	dev-libs/udis86
 	dev-util/hyprwayland-scanner
 	virtual/pkgconfig
 "
