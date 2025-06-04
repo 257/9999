@@ -32,9 +32,7 @@ QA_PREBUILT="
 "
 
 NIGHT=$(ver_cut 6)
-ewarn "${NIGHT}"
 NIGHT="${NIGHT:0:4}-${NIGHT:4:2}-${NIGHT:6:2}"
-ewarn "${NIGHT}"
 pv=$(ver_cut 1-4)
 SRC_URI="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/${pv}/${PN}-nightly-${NIGHT}-linux.tar.gz"
 S=${WORKDIR}/${PN}
@@ -59,9 +57,6 @@ RDEPEND="${DEPEND}
 	virtual/libcrypt:=
 "
 
-src_unpack() {
-	ewarn "${SRC_URI}"
-}
 src_compile() {
 	:;
 }
