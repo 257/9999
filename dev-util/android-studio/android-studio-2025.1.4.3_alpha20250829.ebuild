@@ -65,7 +65,7 @@ src_install() {
 	local dir="/opt/${PN}"
 	insinto "${dir}"
 	doins -r *
-	fperms 755 "${dir}"/bin/{fsnotifier,format.sh,game-tools.sh,ltedit.sh,profiler.sh,restarter,inspect.sh,studio.sh,studio_safe.sh}
+	fperms 755 "${dir}"/bin/{fsnotifier,format.sh,game-tools.sh,ltedit.sh,profiler.sh,restarter,inspect.sh,studio.sh}
 	fperms -R 755 "${dir}"/bin/lldb
 	fperms -R 755 "${dir}"/jbr/bin
 	fperms -R 755 "${dir}"/plugins/android-ndk/resources/lldb/bin
