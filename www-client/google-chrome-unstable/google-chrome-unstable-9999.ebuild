@@ -12,26 +12,20 @@ inherit chromium-2 desktop pax-utils unpacker xdg
 DESCRIPTION="The web browser from Google"
 HOMEPAGE="https://www.google.com/chrome"
 
-if [[ ${PN} == google-chrome ]]; then
-	MY_PN=${PN}-stable
-else
-	MY_PN=${PN}
-fi
-
 MY_PN="google-chrome-canary"
 SRC_URI="https://dl.google.com/linux/direct/google-chrome-canary_current_amd64.deb"
 S=${WORKDIR}
 
 LICENSE="google-chrome"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 
 IUSE="qt5 qt6 selinux"
 
 RESTRICT="bindist mirror strip"
 
 RDEPEND="
-	>=app-accessibility/at-spi2-core-2.46.0:2
+    >=app-accessibility/at-spi2-core-2.46.0:2
 	app-misc/ca-certificates
 	dev-libs/expat
 	dev-libs/glib:2
@@ -58,55 +52,55 @@ QA_DESKTOP_FILE="usr/share/applications/google-chrome.*\\.desktop"
 CHROME_HOME="opt/google/chrome${MY_PN#google-chrome}"
 
 pkg_nofetch() {
-	eerror "Please wait 24 hours and sync your tree before reporting a bug for google-chrome fetch failures."
+    eerror "Please wait 24 hours and sync your tree before reporting a bug for google-chrome fetch failures."
 }
 
 pkg_pretend() {
-	# Protect against people using autounmask overzealously
-	use amd64 || die "google-chrome only works on amd64"
+    # Protect against people using autounmask overzealously
+    use amd64 || die "google-chrome only works on amd64"
 }
 
 pkg_setup() {
-	chromium_suid_sandbox_check_kernel_config
+    chromium_suid_sandbox_check_kernel_config
 }
 
 src_unpack() {
-	:
+    :
 }
 
 src_install() {
-	dodir /
-	cd "${ED}" || die
-	unpacker
+    dodir /
+    cd "${ED}" || die
+    unpacker
 
-	mv usr/share/doc/${MY_PN} usr/share/doc/${PF} || die
+    mv usr/share/doc/${MY_PN} usr/share/doc/${PF} || die
 
-	gzip -d usr/share/doc/${PF}/changelog.gz || die
-	gzip -d usr/share/man/man1/${MY_PN}.1.gz || die
-	if [[ -L usr/share/man/man1/google-chrome.1.gz ]]; then
-		rm usr/share/man/man1/google-chrome.1.gz || die
-		dosym ${MY_PN}.1 usr/share/man/man1/google-chrome.1
-	fi
+    gzip -d usr/share/doc/${PF}/changelog.gz || die
+    gzip -d usr/share/man/man1/${MY_PN}.1.gz || die
+    if [[ -L usr/share/man/man1/google-chrome.1.gz ]]; then
+        rm usr/share/man/man1/google-chrome.1.gz || die
+        dosym ${MY_PN}.1 usr/share/man/man1/google-chrome.1
+    fi
 
-	pushd "${CHROME_HOME}/locales" > /dev/null || die
-	chromium_remove_language_paks
-	popd > /dev/null || die
+    pushd "${CHROME_HOME}/locales" >/dev/null || die
+    chromium_remove_language_paks
+    popd >/dev/null || die
 
-	if ! use qt5; then
-		rm "${CHROME_HOME}/libqt5_shim.so" || die
-	fi
-	if ! use qt6; then
-		rm "${CHROME_HOME}/libqt6_shim.so" || die
-	fi
+    if ! use qt5; then
+        rm "${CHROME_HOME}/libqt5_shim.so" || die
+    fi
+    if ! use qt6; then
+        rm "${CHROME_HOME}/libqt6_shim.so" || die
+    fi
 
-	local suffix=
-	[[ ${PN} == google-chrome-beta ]] && suffix=_beta
-	[[ ${PN} == google-chrome-unstable ]] && suffix=_canary
+    local suffix=
+    [[ ${PN} == google-chrome-beta ]] && suffix=_beta
+    [[ ${PN} == google-chrome-unstable ]] && suffix=_canary
 
-	local size
-	for size in 16 24 32 48 64 128 256 ; do
-		newicon -s ${size} "${CHROME_HOME}/product_logo_${size}${suffix}.png" ${PN}.png
-	done
+    local size
+    for size in 16 24 32 48 64 128 256; do
+        newicon -s ${size} "${CHROME_HOME}/product_logo_${size}${suffix}.png" ${PN}.png
+    done
 
-	pax-mark m "${CHROME_HOME}/chrome"
+    pax-mark m "${CHROME_HOME}/chrome"
 }
