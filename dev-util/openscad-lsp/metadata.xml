@@ -17,14 +17,11 @@
     <description>Primary maintainer</description>
   </maintainer>
   <maintainer type="project">
-    <name>openscad-language-server</name>
+    <name>openscad-lsp</name>
   </maintainer>
   <longdescription>
-    openscad-language-server is an LSP (Language Server Protocol) server for
-    OpenSCAD. It enables IDE-style features for OpenSCAD code in any editor for
-    which an LSP client is available—i.e., most major modern text editors.
-    Status: Pretty basic by IDE standards, but functional and well beyond what
-    the built-in OpenSCAD editor provides. Tested primarily with lsp-mode on
-    Emacs on Linux.
+    A LSP (Language Server Protocol) server for OpenSCAD.
+
+    inspired by dzhu/openscad-language-server
   </longdescription>
 </pkgmetadata>
