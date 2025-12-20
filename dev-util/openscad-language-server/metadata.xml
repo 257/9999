@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<!--
+  This is the example metadata file.
+  The root element of this file is <pkgmetadata>. Within this element a
+  number of subelements are allowed, the most common being maintainer.
+
+  For a full description look at:
+  https://devmanual.gentoo.org/ebuild-writing/misc-files/metadata/
+
+  Before committing, please remove the comments from this file. They are
+  not relevant for general metadata.xml files.
+-->
+<pkgmetadata>
+  <maintainer type="person">
+    <email>darwinskernel@gmail.com</email>
+    <description>Primary maintainer</description>
+  </maintainer>
+  <maintainer type="project">
+    <name>openscad-language-server</name>
+  </maintainer>
+  <longdescription>
+    openscad-language-server is an LSP (Language Server Protocol) server for
+    OpenSCAD. It enables IDE-style features for OpenSCAD code in any editor for
+    which an LSP client is available—i.e., most major modern text editors.
+    Status: Pretty basic by IDE standards, but functional and well beyond what
+    the built-in OpenSCAD editor provides. Tested primarily with lsp-mode on
+    Emacs on Linux.
+  </longdescription>
+</pkgmetadata>
