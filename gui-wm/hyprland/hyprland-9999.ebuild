@@ -3,20 +3,12 @@
 
 EAPI=8
 
-inherit meson toolchain-funcs
+inherit cmake toolchain-funcs git-r3
 
 DESCRIPTION="A dynamic tiling Wayland compositor that doesn't sacrifice on its looks"
 HOMEPAGE="https://github.com/hyprwm/Hyprland"
 
-if [[ "${PV}" = *9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/hyprwm/${PN^}.git"
-else
-	SRC_URI="https://github.com/hyprwm/${PN^}/releases/download/v${PV}/source-v${PV}.tar.gz -> ${P}.gh.tar.gz"
-	S="${WORKDIR}/${PN}-source"
-
-	KEYWORDS="~amd64"
-fi
+EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="BSD"
 SLOT="0"
@@ -43,9 +35,12 @@ RDEPEND="
 	dev-libs/wayland
 	gui-libs/aquamarine
 	gui-libs/hyprcursor
+	dev-libs/hyprlang
 	gui-libs/hyprutils
+	sys-apps/hyprwire
 	media-libs/libglvnd
 	media-libs/mesa
+	dev-cpp/muParser
 	sys-apps/util-linux
 	x11-libs/cairo
 	x11-libs/libdrm
@@ -63,12 +58,12 @@ RDEPEND="
 "
 DEPEND="
 	${RDEPEND}
-	dev-cpp/glaze
+	>=dev-cpp/glaze-6.1.0
 	>=dev-libs/hyprland-protocols-0.6.0
 	>=dev-libs/wayland-protocols-1.41
 "
 BDEPEND="
-	|| ( >=sys-devel/gcc-14:* >=llvm-core/clang-18:* )
+	|| ( >=sys-devel/gcc-15:* >=llvm-core/clang-21:* )
 	app-misc/jq
 	dev-build/cmake
 	>=dev-util/hyprwayland-scanner-0.3.10
@@ -78,21 +73,21 @@ BDEPEND="
 pkg_setup() {
 	[[ ${MERGE_TYPE} == binary ]] && return
 
-	if tc-is-gcc && ver_test $(gcc-version) -lt 14; then
-		eerror "Hyprland requires >=sys-devel/gcc-14 to build"
+	if tc-is-gcc && ver_test $(gcc-version) -lt 15; then
+		eerror "Hyprland requires >=sys-devel/gcc-15 to build"
 		eerror "Please upgrade GCC: emerge -v1 sys-devel/gcc"
 		die "GCC version is too old to compile Hyprland!"
-	elif tc-is-clang && ver_test $(clang-version) -lt 18; then
-		eerror "Hyprland requires >=llvm-core/clang-18 to build"
+	elif tc-is-clang && ver_test $(clang-version) -lt 20; then
+		eerror "Hyprland requires >=llvm-core/clang-20 to build"
 		eerror "Please upgrade Clang: emerge -v1 llvm-core/clang"
 		die "Clang version is too old to compile Hyprland!"
 	fi
 }
 
 src_configure() {
-	local emesonargs=(
-		$(meson_feature systemd)
-		$(meson_feature X xwayland)
+	local mycmakeargs=(
+		"-DNO_SYSTEMD=$(usex !systemd)"
+		"-DNO_XWAYLAND=$(usex !X)"
 	)
-	meson_src_configure
+	cmake_src_configure
 }
