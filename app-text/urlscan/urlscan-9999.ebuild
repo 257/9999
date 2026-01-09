@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=(python3_13)
+PYTHON_COMPAT=(python3_13 python3_14)
 
 DESCRIPTION="Small program that is designed to integrate with the mutt"
 HOMEPAGE="https://github.com/firecat53/urlscan"
