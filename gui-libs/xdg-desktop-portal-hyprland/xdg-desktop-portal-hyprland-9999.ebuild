@@ -27,8 +27,6 @@ DEPEND="
 	dev-libs/inih
 	dev-libs/wayland
 	dev-libs/wayland-protocols
-	dev-qt/qtbase:6[gui,widgets]
-	dev-qt/qtwayland:6
 	media-libs/mesa
 	sys-apps/util-linux
 	x11-libs/libdrm
