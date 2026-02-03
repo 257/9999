@@ -33,7 +33,7 @@ src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_SKIP_INSTALL_RULES=OFF
 		-Dglaze_DEVELOPER_MODE=ON
-		-Dglaze_ENABLE_FUZZING=$(usex fuzzing)
+		-Dglaze_ENABLE_FUZZING=OFF
 		-Dglaze_BUILD_EXAMPLES=$(usex examples)
 		-DBUILD_TESTING=$(usex test)
 	)
