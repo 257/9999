@@ -11,9 +11,9 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="MIT"
 SLOT=0
-KEYWORDS=""
+KEYWORDS="~amd64"
 
-IUSE="examples fuzzing test"
+IUSE="examples test"
 RESTRICT="!test? ( test )"
 
 DEPEND="
