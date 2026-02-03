@@ -11,7 +11,7 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="MIT"
 SLOT=0
-KEYWORDS="~amd64"
+KEYWORDS=""
 
 IUSE="examples test"
 RESTRICT="!test? ( test )"
