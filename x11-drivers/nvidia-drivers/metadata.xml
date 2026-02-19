@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+    <email>darwinskernel@gmail.com</email>
+		<name>Paymon MARNADI</name>
+	</maintainer>
+	<use>
+		<flag name="persistenced">Install the persistence daemon for keeping devices state when unused (e.g. for headless)</flag>
+		<flag name="tools">Install additional tools such as nvidia-settings</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">NVIDIA/open-gpu-kernel-modules</remote-id>
+	</upstream>
+	<slots>
+		<subslots>
+			Subslot is primarily used to identify branches, at most
+			rebuilding reverse dependencies on bumps would only be
+			for the static library (not essential to) given other
+			headers are provided by nvidia-cuda-toolkit instead.
+		</subslots>
+	</slots>
+</pkgmetadata>
