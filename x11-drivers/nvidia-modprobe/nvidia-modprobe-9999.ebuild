@@ -14,7 +14,6 @@ LICENSE="
 	curl openssl public-domain
 "
 SLOT="0/${PV%%.*}"
-KEYWORDS="-* ~amd64 ~arm64"
 
 COMMON_DEPEND="acct-group/video"
 RDEPEND="${COMMON_DEPEND}"
