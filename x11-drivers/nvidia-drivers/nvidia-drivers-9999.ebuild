@@ -22,7 +22,6 @@ LICENSE="
 	curl openssl public-domain
 "
 SLOT="0/${PV%%.*}"
-KEYWORDS="-* ~amd64 ~arm64"
 IUSE="
 	X abi_x86_32 abi_x86_64 persistenced
 	static-libs +tools wayland
