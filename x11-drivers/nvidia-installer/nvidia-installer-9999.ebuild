@@ -14,7 +14,6 @@ LICENSE="
 	curl openssl public-domain
 "
 SLOT="0"
-KEYWORDS="-* ~amd64 ~arm64"
 IUSE="+wayland"
 
 COMMON_DEPEND=""
