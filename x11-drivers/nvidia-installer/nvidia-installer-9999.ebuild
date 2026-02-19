@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit git-r3
+inherit toolchain-funcs git-r3
 
 DESCRIPTION="NVIDIA Accelerated Graphics Driver"
 HOMEPAGE="https://github.com/NVIDIA"
