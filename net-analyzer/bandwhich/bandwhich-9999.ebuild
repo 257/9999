@@ -375,9 +375,6 @@ inherit cargo git-r3
 
 DESCRIPTION="Display current network utilization by process, connection and remote IP/hostname"
 HOMEPAGE="https://github.com/imsnif/bandwhich"
-SRC_URI="
-	${CARGO_CRATE_URIS}
-"
 EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="MIT"
