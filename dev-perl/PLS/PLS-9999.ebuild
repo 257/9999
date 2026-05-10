@@ -10,7 +10,6 @@ EGIT_REPO_URI="${HOMEPAGE}.git"
 
 DESCRIPTION="Perl Language Server"
 SLOT="0"
-KEYWORDS=""
 IUSE=""
 
 RDEPEND="
