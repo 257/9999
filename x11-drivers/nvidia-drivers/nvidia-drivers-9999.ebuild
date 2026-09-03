@@ -8,14 +8,12 @@ inherit eapi9-ver flag-o-matic linux-mod-r1
 inherit toolchain-funcs unpacker
 inherit git-r3
 
-MODULES_KERNEL_MAX=6.19
+MODULES_KERNEL_MAX=7.2
 NV_URI="https://download.nvidia.com/XFree86/"
 
 DESCRIPTION="NVIDIA Accelerated Graphics Driver"
 HOMEPAGE="https://github.com/NVIDIA"
 EGIT_REPO_URI="${HOMEPAGE}/open-gpu-kernel-modules.git"
-S=${WORKDIR}
-EGIT_CHECKOUT_DIR="${WORKDIR}/kernel-module-source"
 
 LICENSE="
 	NVIDIA-2025 Apache-2.0 Boost-1.0 BSD BSD-2 GPL-2 MIT ZLIB
@@ -24,7 +22,7 @@ LICENSE="
 SLOT="0/${PV%%.*}"
 IUSE="
 	X abi_x86_32 abi_x86_64 persistenced
-	static-libs +tools wayland
+	static-libs +tools wayland +gsp
 "
 
 COMMON_DEPEND="
@@ -40,6 +38,7 @@ RDEPEND="
 	${COMMON_DEPEND}
 	dev-libs/openssl:0/3
 	sys-libs/glibc
+	gsp? ( sys-kernel/linux-firmware )
 	wayland? (
 		>=gui-libs/egl-gbm-1.1.1-r2[abi_x86_32(-)?]
 		>=gui-libs/egl-wayland-1.1.13.1[abi_x86_32(-)?]
@@ -125,9 +124,6 @@ pkg_setup() {
 
 src_prepare() {
 	default
-
-	# use alternative vulkan icd option if USE=-X (bug #909181)
-	use X || sed -i 's/"libGLX/"libEGL/' nvidia_{layers,icd}.json || die
 }
 
 src_compile() {
@@ -160,8 +156,7 @@ src_compile() {
 	if use modules; then
 		local o_cflags=${CFLAGS} o_cxxflags=${CXXFLAGS} o_ldflags=${LDFLAGS}
 
-		local modlistargs=video:kernel
-		modlistargs+=-module-source:kernel-module-source/kernel-open
+		local modlistargs=video:.:kernel-open
 
 		# environment flags are normally unused for modules, but nvidia
 		# uses it for building the "blob" and it is a bit fragile
