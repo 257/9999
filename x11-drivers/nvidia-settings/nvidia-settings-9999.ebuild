@@ -29,8 +29,10 @@ COMMON_DEPEND="
 	x11-libs/gdk-pixbuf:2
 	x11-libs/gtk+:3[X]
 	x11-libs/libX11
+	x11-libs/libXv
 	x11-libs/libXext
 	x11-libs/libXxf86vm
+	x11-libs/libvdpau
 	x11-libs/pango
 "
 RDEPEND="${COMMON_DEPEND}"
