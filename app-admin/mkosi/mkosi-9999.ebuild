@@ -11,6 +11,7 @@ inherit distutils-r1 optfeature git-r3
 DESCRIPTION="gentoo fork of mkosi"
 HOMEPAGE="https://github.com/257/mkosi"
 EGIT_REPO_URI="${HOMEPAGE}.git"
+EGIT_BRANCH="gentoo"
 
 LICENSE="GPL-2+"
 SLOT="0"
@@ -24,6 +25,10 @@ RDEPEND="
 BDEPEND="virtual/pandoc"
 
 distutils_enable_tests pytest
+
+src_unpack() {
+	git-r3_src_unpack
+}
 
 src_compile() {
 	distutils-r1_src_compile
@@ -39,8 +44,4 @@ src_install() {
 
 pkg_postinst() {
 	optfeature "debian support" dev-util/debootstrap
-}
-
-src_unpack() {
-	git-r3_src_unpack
 }
