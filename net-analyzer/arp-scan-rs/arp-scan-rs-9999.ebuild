@@ -17,9 +17,9 @@ LICENSE+="
 	MIT Unicode-DFS-2016
 	|| ( Apache-2.0 Boost-1.0 )
 "
+S="${S}/arp-scan"
 SLOT="0"
 KEYWORDS=""
-S="${S}/arp-scan"
 
 RDEPEND="!net-analyzer/arp-scan"
 
