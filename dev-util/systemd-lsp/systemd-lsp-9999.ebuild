@@ -12,11 +12,12 @@ HOMEPAGE="https://github.com/jfryy/systemd-lsp"
 EGIT_REPO_URI="${HOMEPAGE}.git"
 
 LICENSE="MIT"
-# Dependent crate licenses
 LICENSE+=" Apache-2.0 MIT Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+
 src_unpack() {
-    git-r3_src_unpack
-    cargo_live_src_unpack
+	git-r3_src_unpack
+	pushd "${S}" >/dev/null || die
+	cargo_live_src_unpack
+	popd >/dev/null || die
 }
