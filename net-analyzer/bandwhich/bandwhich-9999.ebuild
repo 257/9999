@@ -18,5 +18,7 @@ SLOT="0"
 
 src_unpack() {
 	git-r3_src_unpack
+	pushd "${S}" >/dev/null || die
 	cargo_live_src_unpack
+	popd >/dev/null || die
 }
