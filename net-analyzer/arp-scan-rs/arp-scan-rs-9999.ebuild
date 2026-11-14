@@ -17,13 +17,17 @@ LICENSE+="
 	MIT Unicode-DFS-2016
 	|| ( Apache-2.0 Boost-1.0 )
 "
-S="${S}/arp-scan"
 SLOT="0"
-KEYWORDS=""
 
 RDEPEND="!net-analyzer/arp-scan"
 
 src_unpack() {
 	git-r3_src_unpack
+	pushd "${S}" >/dev/null || die
 	cargo_live_src_unpack
+	popd >/dev/null || die
+}
+
+src_install() {
+	cargo_src_install --path arp-scan
 }
