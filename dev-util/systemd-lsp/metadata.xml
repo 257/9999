@@ -20,4 +20,5 @@
     <email>paymon@encs.concordia.ca</email>
     <name>9999</name>
   </maintainer>
+  <remote-id type="github">jfryy/systemd-lsp</remote-id>
 </pkgmetadata>
